@@ -1,0 +1,12 @@
+name: Render assignment_example.pdf
+on: push
+jobs:
+  render-paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: typst-community/setup-typst@v3
+        with:
+          cache-dependency-path: assignment_example.typ
+      # Now Typst is installed and packages will be cached!
+      - run: typst compile assignment_example.typ assignment_example.pdf
