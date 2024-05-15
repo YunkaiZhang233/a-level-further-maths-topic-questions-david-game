@@ -3,7 +3,7 @@
 
 #let prob(body) = {
   // let current_problem = problem_counter.step()
-  [== Problem #problem_counter.step() #problem_counter.display()]
+  [=== Problem #problem_counter.step() #problem_counter.display()]
   block(fill:rgb(250, 255, 250),
    width: 100%,
    inset:8pt,
@@ -12,6 +12,16 @@
    body)
   }
 
+#let topic_counter = counter("topic")
+#let topic(topic_name) = {
+  topic_counter.step()
+  [= Topic #topic_counter.display(): #topic_name]
+  }
+
+#let subtopic(subtopic_name) = {
+  [== Subtopic: #subtopic_name]
+}
+
 // Some math operators
 #let prox = [#math.op("prox")]
 #let proj = [#math.op("proj")]
@@ -19,7 +29,7 @@
 
 
 // Initiate the document title, author...
-#let assignment_class(title, author, course_id, professor_name, semester, due_time, body) = {
+#let assignment_class(title, author, course_id, instructor_name, school_name, written_time, body) = {
   set document(title: title, author: author)
   set page(
     paper:"us-letter", 
@@ -44,8 +54,8 @@
   align(center, text(17pt)[
     *#course_id: #title*])
   align(center, text(10pt)[
-    Due on #due_time])
-  align(center, [_Prof. #professor_name _, #semester, #due_time])
+    #written_time])
+  align(center, [taught by #instructor_name, #school_name])
   block(height:35%,fill:none)
   align(center)[*#author*]
   

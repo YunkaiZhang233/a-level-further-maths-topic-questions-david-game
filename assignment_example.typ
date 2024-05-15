@@ -1,12 +1,17 @@
 #import "template.typ": *
-#let title = "Assignment #4"
-#let author = "Alice Bob"
-#let course_id = "CS101"
-#let instructor = "Turing, Alan"
-#let semester = "Spring 2023"
-#let due_time = "April 3 at 23:59"
+#let title = "FS1 Topic Questions"
+#let author = "Yunkai Zhang"
+#let course_id = "Further Mathematics"
+#let instructor = "Dr. Zameer ul-Hassan"
+#let school_name = "David Game College"
+#let written_time = "Spring 2024"
 #set enum(numbering: "a)")
-#show: assignment_class.with(title, author, course_id, instructor, semester, due_time)
+#show: assignment_class.with(title, author, course_id, instructor, school_name, written_time)
+
+#topic[Alpha]
+
+#subtopic[AlphaOne]
+
 
 #prob[
 // + $A=mat(1,-1;-1,1;1,1)$
@@ -37,6 +42,8 @@ $ prox_phi(z) = prox_phi.alt(z-c)+c  = cases(z-lambda "when " z>lambda + c,
  z + lambda "when" z < -lambda+c) $
 ]
 
+#subtopic[AlphaTwo]
+
 #prob[
 1. If we take the derivative of $1/2 norm(bold(x)-bold(x)^(t-1))^2 + gamma g(bold(x))$, we have
 $ bold(x^t) = prox_(gamma g)(bold(x)^(t-1)) =  bold(x)^(t-1) - gamma nabla g(bold(x^t)) $
@@ -47,6 +54,8 @@ $ g(bold(x)^(t)) <= g(bold(x^(t-1))) - nabla g(bold(x^(t)))^T (bold(x)^(t-1)-bol
 3. because $bold(x^t) =  bold(x)^(t-1) - gamma nabla g(bold(x^t))$ which is a gradient descent method, so
 $ -oo<g(bold(x)^t)<=g(bold(x)^(t-1)) $ and we have $ g(bold(x)^(t)) <=  g(bold(x^(t-1))) - gamma nabla norm(g(bold(x^(t))))^2_2 $ hence $ 0<=gamma nabla norm(g(bold(x^(t))))^2_2<=0 $ if $ t arrow +oo $
 ]
+
+#topic[Beta]
 
 #prob[
 1. because
