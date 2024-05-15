@@ -7,6 +7,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: typst-community/setup-typst@v3
         with:
-          cache-dependency-path: assignment_example.typ
+          cache-dependency-path: further-statistics-1.typ
       # Now Typst is installed and packages will be cached!
-      - run: typst compile assignment_example.typ assignment_example.pdf
+      - run: typst compile further-statistics-1.typ fs1.pdf

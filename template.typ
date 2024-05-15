@@ -1,26 +1,39 @@
-
 #let problem_counter = counter("problem")
 
-#let prob(body) = {
+#let setup_doc = {
+  set enum(numbering: "a)")
+  set heading(numbering: "1.1.")
+  outline()
+  pagebreak(weak: false)
+  problem_counter.update(0)
+}
+
+#let prob(source, body) = {
   // let current_problem = problem_counter.step()
-  [=== Problem #problem_counter.step() #problem_counter.display()]
   block(fill:rgb(250, 255, 250),
    width: 100%,
    inset:8pt,
    radius: 4pt,
    stroke:rgb(31, 199, 31),
-   body)
+   breakable: false,
+   [== #source] + body)
   }
+
+
+#let spec = [*Examinable Contents*]
 
 #let topic_counter = counter("topic")
 #let topic(topic_name) = {
   topic_counter.step()
-  [= Topic #topic_counter.display(): #topic_name]
+  [= #topic_name]
+  spec
   }
 
-#let subtopic(subtopic_name) = {
-  [== Subtopic: #subtopic_name]
-}
+// #let subtopic(subtopic_name) = {
+//   [== Subtopic: #subtopic_name]
+// }
+
+
 
 // Some math operators
 #let prox = [#math.op("prox")]
@@ -36,12 +49,9 @@
     header: locate( 
         loc => if (
             counter(page).at(loc).first()==1) { none } 
-        else if (counter(page).at(loc).first()==2) { align(right, 
-              [*#author* | *#course_id: #title* | *Problem 1*]
-            ) }
         else { 
             align(right, 
-              [*#author* | *#course_id: #title* | *Problem #problem_counter.at(loc).first()*]
+              [*#author* | *#course_id* | *#title*]
             ) 
         }
     ), 

@@ -1,4 +1,4 @@
-declare -a tasks=("assignment_example")
+declare -a tasks=("further-statistics-1")
 
 for task in "${tasks[@]}"; 
 do
