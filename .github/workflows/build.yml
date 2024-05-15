@@ -9,4 +9,4 @@ jobs:
         with:
           cache-dependency-path: assignment_example.typ
       # Now Typst is installed and packages will be cached!
-      - run: typst compile assignment_example.typ assignment_example.pdf
+      - run: typst compile assignment_example.typ output/assignment_example.pdf
