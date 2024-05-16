@@ -29,7 +29,7 @@
 
   Course Lecturer: Zameer ul-Hassan, David Game Colege
 
-  Author of this note: Yunkai Zhang, #underline(link("mailto:yunkaizhang233@gmail.com"))
+  Author of this note: Yunkai Zhang, #underline(link("mailto:yunkaizhang233@gmail.com")).
 
 
   This document was made by #text(blue)[typst], available at #underline(link("https://typst.app/docs")[here]).
