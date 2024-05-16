@@ -201,7 +201,8 @@
 )
 
 #topic[Central Limit Theorem]
-- #a2 Applications of the central Limit Theorem to other distributions.
+#a2_all
+- Applications of the central Limit Theorem to other distributions.
 
 #topic[Chi-Squared Tests]
 - Goodness of fit tests and Contingency Tables
@@ -209,8 +210,7 @@
 - The use $sum_(i=1)^(n) ((O_i - E_i)^2)/(E_i)$ as an approximate $chi^2$ statistic.
 - Degrees of freedom
 
-
-
+#include "fs1/chi-square.typ"
 
 
 #topic[Probability Generating Functions]
@@ -219,6 +219,8 @@
 - Use of the probability generating function for the negative binomial, geometric, binomial and Poisson distributions.
 - Use to find the mean and variance.
 - Probability generating function of the sum of independent random variables.
+
+#include "fs1/pgf.typ"
 
 #topic[Quality of Tests]
 #a2_all
