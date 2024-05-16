@@ -2,3 +2,4 @@ typst.exe
 *.pdf
 !output/*.pdf
 .DS_Store
+spec.md

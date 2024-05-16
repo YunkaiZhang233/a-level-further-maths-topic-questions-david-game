@@ -45,13 +45,13 @@
 #let assignment_class(title, author, course_id, instructor_name, school_name, written_time, body) = {
   set document(title: title, author: author)
   set page(
-    paper:"us-letter", 
+    paper:"a4", 
     header: locate( 
         loc => if (
             counter(page).at(loc).first()==1) { none } 
         else { 
             align(right, 
-              [*#author* | *#course_id* | *#title*]
+              [*#course_id* | *#title*]
             ) 
         }
     ), 
